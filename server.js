@@ -2,6 +2,7 @@ require('dotenv').config()
 /* ==== External Modules ==== */
 const express = require('express')
 const methodOverride = require('method-override')
+const session = require('express-session')
 
 /* ==== Internal Modules ==== */
 const routes = require('./routes')
@@ -26,6 +27,13 @@ app.use((req, res, next) => {
 	console.log(req.url, req.method)
 	next()
 })
+app.use(
+	session({
+		secret: "Mayonnaise Sandwiches",
+		resave: false,
+		saveUninitialized: true,
+	})
+)
 
 /* ====  Routes & Controllers  ==== */
 //Home Route
