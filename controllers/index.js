@@ -1,4 +1,4 @@
 module.exports = {
-	authors: require('./authors'),
-	articles: require('./articles'),
+	veggies: require('./veggies'),
+	reviews: require('./reviews'),
 }
