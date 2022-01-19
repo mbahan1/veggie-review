@@ -13,7 +13,7 @@ const ctrl = require("../controllers");
  */
 
 router.get("/", ctrl.reviews.idx);
-router.get("/new", ctrl.reviews.newArticle);
+router.get("/new", ctrl.reviews.newReview);
 router.get("/:id", ctrl.reviews.show);
 
 router.post("/", ctrl.reviews.create);
@@ -22,3 +22,4 @@ router.delete("/:id", ctrl.reviews.destroy);
 router.get("/:id/edit", ctrl.reviews.edit);
 
 module.exports = router;
+
