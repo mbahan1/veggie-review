@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ('../partials/head.ejs') %>
+		<title>VegReview🥕 || <%= review.title %></title>
+	</head>
+	<body>
+   
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="#" class="brand-logo">Express-Blog</a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="../">Home</a></li>
+				<li><a href="../veggies">Veggies</a></li>
+				<li><a href="../reviews">Reviews</a></li>
+			  </ul>
+			</div>
+		  </nav>
+	
+		<main>
+			<section>
+				<h2>Review Info</h2>				
+				<li>
+					<a href="/reviews/new">Add a Review</a>
+				</li>
+				<a href="/reviews/<%= review._id %>/edit">Edit</a>
+                <a href="/reviews/<%= review._id %>/?_method=DELETE">Remove</a>
+				<ul>
+					<li>Title: <%= review.title %></li>
+                    <li>Author: <%= review.veggie.name %></li>
+                    <li>Text: <%= review.body %></li>
+				</ul>
+			</section>
+			<form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+				<input type="submit" value="Delete" />
+			</form>
+		</main>
+	</body>
+</html>
