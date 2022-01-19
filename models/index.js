@@ -8,12 +8,12 @@ mongoose
 	.connect(dbUrl)
 	.then(() =>
 		console.log(
-			`MongoDB successfully connected at ${db.host}:${db.port}! How dope!`
+			`MongoDB successfully connected at ${db.host}:${db.port}!`
 		)
 	)
 	.catch((err) => console.log(`MongoDB connection FAILED :( Error: ${err}`))
 
 module.exports = {
-	Author: require('./Author'),
-	Article: require('./Article'),
+	Veggie: require('./Veggie'),
+	Review: require('./Reviews'),
 }
