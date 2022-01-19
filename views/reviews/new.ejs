@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ('../partials/head.ejs') %>
+		<title>VegReview🥕 || New Review</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Express-Blog</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="../">Home</a></li>
+					<li><a href="../veggies/">Veggies</a></li>
+					<li><a href="../reviews">Reviews</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main>
+			<form action="/reviews" method="POST">
+				<p>
+					<input
+						class="input-field"
+						type="text"
+						name="title"
+						placeholder="Title"
+					/>
+				</p>
+				<p>
+					<textarea type="text" name="body" placeholder="Body"></textarea>
+				</p>
+				<p>
+					<select name="veggie">
+						<option value="test">veggie placeholder</option>
+						<% veggies.forEach ( veggie => { %>
+						<option value="<%= veggie._id %>"><%= veggie.name %></option>
+						<% }) %>
+					</select>
+				</p>
+				<input type="submit" value="Create Review" />
+			</form>
+		</main>
+	</body>
+</html>

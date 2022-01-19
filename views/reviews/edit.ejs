@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ('../partials/head.ejs') %>
+		<title>VegReview🥕</title>
+	</head>
+	<body>
+		   
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="#" class="brand-logo">Express-Blog</a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="../">Home</a></li>
+				<li><a href="../veggies">Veggies</a></li>
+				<li><a href="../reviews">Reviews</a></li>
+			  </ul>
+			</div>
+		  </nav>
+	
+		<main>
+			<h1>Edit <%= review.title %></h1>
+			<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+				<input type="text" name="title" value="<%= review.title %>" />
+                <input type="text" name="text" value="<%= review.body %>" />
+				<input type="submit" value="Update" />
+			</form>
+		</main>
+	</body>
+</html>

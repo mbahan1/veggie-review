@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head.ejs') %> 
+  
+  <body>
+    
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Express-Blog</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="../">Home</a></li>
+            <li><a href="../veggies">Veggies</a></li>
+            <li><a href="../reviews">Reviews</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <section>
+      <div>
+        <p class="title">All Reviews</p>
+      </div>
+    </section>
+
+    <main>
+        <p>
+        <li>
+            <a href="/reviews/new">Add a Review</a>
+        </li>
+        </p>
+    <% if(!reviews.length) { %>
+    <p>There are no reviews available. :(</p>
+    <% } %>
+      <div>
+        <% reviews.forEach(review=> { %>
+            <div>
+              <review>
+                <div>
+                  <div>
+                    <strong><%= review.title%></strong>
+                    <small>
+                      <%= new Date(review.createdAt).toLocaleString() %>
+                    </small>
+                    <!-- <p>By: Author Person</p> -->
+                    <%= review.body%>
+                  </div>
+                </div>
+                <div>
+                  <section>
+                    <div>
+                      <a href="/reviews/<%= review._id %>/edit">Edit</a>
+                      <a href="/reviews/<%= review._id %>/?_method=DELETE">Remove</a>
+                    </div>
+                  </section>
+                </div>
+              </review>
+            </div>
+  <% }) %>
+      </div>
+    </main>
+  </body>
+</html>
