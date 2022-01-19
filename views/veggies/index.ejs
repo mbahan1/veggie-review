@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VegReview || Veggies</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Welcome to VegReview!</h1>
+        <ul>
+            <li>
+                <a href="/veggies">Veggies</a>
+            </li>
+            <li>
+                <a href="/veggies/new">Add a Veggie!</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2>List of Veggies</h2>
+        <% if(!veggies.length) { %>
+            <p>There are no veggies available. :(</p>
+            <% } %>
+                <ul>
+                    <% veggies.forEach(veggie=> { %>
+                        <li>
+                            <a href="/veggies/<%= veggie._id %>">
+                                <%= veggie.name %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+    </main>
+</body>
+
+</html>
