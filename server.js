@@ -10,15 +10,15 @@ const routes = require('./routes')
 const app = express()
 
 /* ====  Configuration  ==== */
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 app.set('view engine', 'ejs')
 
 /* ====  Middleware  ==== */
-// body data middleware
+// body data middleware 
 app.use(express.urlencoded({ extended: true }))
 // method override middleware
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method')) 
 // serve public files
 app.use(express.static('public'))
 // logger
