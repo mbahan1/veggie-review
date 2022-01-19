@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VegReview🥕 || <%= veggie.name %>
+    </title>
+</head>
+
+<body>
+    <nav>
+        <h1>Welcome to VegReview!</h1>
+        <ul>
+            <li>
+                <a href="/veggies">Veggies</a>
+            </li>
+            <li>
+                <a href="/veggies/new">Add a Veggie!</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Veggie Info</h2>
+            <a href="/veggies/<%=veggie._id %>/edit">Edit</a>
+            <ul>
+                <li>Name: <%= veggie.name %>
+                </li>
+            </ul>
+        </section>
+        <form action="/veggies/<%= veggie._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+        </form>
+    </main>
+</body>
+
+</html>
