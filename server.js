@@ -1,14 +1,19 @@
-require('dotenv').config()
+require('dotenv').config();
 /* ==== External Modules ==== */
-const express = require('express')
-const methodOverride = require('method-override')
-const session = require('express-session')
+const express = require('express');
+const methodOverride = require('method-override');
+const session = require('express-session');
+const passport = require('passport');
 
 /* ==== Internal Modules ==== */
-const routes = require('./routes')
+const routes = require('./routes');
 
 /* ==== Instanced Modules  ==== */
-const app = express()
+const app = express();
+
+// connect to the MongoDB and passport with mongoose
+require('./config/database');
+require('./config/passport');
 
 /* ====  Configuration  ==== */
 const PORT = 4000
@@ -27,6 +32,7 @@ app.use((req, res, next) => {
 	console.log(req.url, req.method)
 	next()
 })
+// session middleware
 app.use(
 	session({
 		secret: "Mayonnaise Sandwiches",
@@ -34,6 +40,9 @@ app.use(
 		saveUninitialized: true,
 	})
 )
+// mount passport
+app.use(passport.initialize())
+app.use(passport.session())
 
 /* ====  Routes & Controllers  ==== */
 //Home Route
