@@ -11,11 +11,17 @@
 <body>
     <nav>
         <h1>Welcome to VegReview!</h1>
-        <ul>
-            <li>
-                <a href="/veggies">Veggies</a>
-            </li>
-        </ul>
+            <ul class="right">
+                <li>
+                    <li><a href="/veggies">Veggies</a></li>    
+                    <li><a href="/users">See All Users</a></li>
+                    <% if (user) { %>
+                        <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                        <% } else { %>
+                        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                        <% } %>
+                </li>
+            </ul>
     </nav>
 </body>
 
