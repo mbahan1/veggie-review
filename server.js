@@ -49,7 +49,9 @@ app.use(passport.session());
 /* ====  Routes & Controllers  ==== */
 //Home Route
 app.get('/', (req, res) => {
-	res.render('home')
+	res.render("home", {
+		user: req.user,
+	});
 })
 //404 Route
 app.get((req, res) => {
