@@ -17,43 +17,6 @@
             <li><a href="../">Return Home</a></li>
           </ul>
         </div>
-    </nav>
-    <main>
-        <section>
-            <h2>Veggie Info</h2>
-            <a href="/veggies/<%=veggie._id %>/edit">Edit</a>
-            <ul>
-                <li>Name: <%= veggie.name %>
-                </li>
-            </ul>
-        </section>
-        <form action="/veggies/<%= veggie._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
-        </form>
-    </main>
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <%- include ('../partials/head.ejs') %>
-    <title>VegReview🥕 || <%= veggie.name %>
-    </title>
-</head>
-
-<body>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">VegReview</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="../veggies">Random Veggie</a></li>
-            <li><a href="../veggies">List of Veggies</a></li>
-            <li><a href="../">Return Home</a></li>
-          </ul>
-        </div>
       </nav>
       <main>
         <section>
