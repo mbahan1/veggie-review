@@ -38,3 +38,8 @@ passport.serializeUser(function (student, done) {
 });
 
 // passport.deserializeUser is called with each request, decodes cookie, creates req.user 
+passport.deserializeUser(function (id, done) {
+	Patron.findById(id, function (err, patron) {
+		done(err, patron); // creates req.user
+	});
+});
