@@ -20,7 +20,7 @@ const db = require('../models')
 // Index
 
 const idx = (req, res) => {
-	db.Veggies.find({}, function (err, allVeggies) {
+	db.Veggie.find({}, function (err, allVeggies) {
 		if (err) return res.send(err)
 		const context = { veggies: allVeggies }
 		return res.render('veggies/index', context)
