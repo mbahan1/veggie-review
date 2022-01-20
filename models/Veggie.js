@@ -17,7 +17,7 @@ const veggieSchema = new mongoose.Schema(
 		scientific_name: {
 			type: String,
 			required: [true, "You must provide a commonly used a scientific name property"],
-		}
+		},
 		reviews: [{type:mongoose.Schema.Types.ObjectId, ref: "Review"}]
 	},
 	{
