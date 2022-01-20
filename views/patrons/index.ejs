@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+    <title>VegReview</title>
+</head>
+    <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper purple">
+                    <a href="" class="brand-logo left">Patrons</a>
+                </div>
+            </nav>
+        </div>
+        <header class="container">
+            <h2>Welcome</h2>
+                <div>
+                    <ul class="right">
+                        <li>
+                            <% if (user) { %>
+                                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                            <% } else { %>
+                                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                            <% } %>
+                        </li>
+                    </ul>
+                </div>
+        </header>
+    </body>
+</html>
