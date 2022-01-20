@@ -34,3 +34,57 @@
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('../partials/head.ejs') %>
+    <title>VegReview🥕 || <%= veggie.name %>
+    </title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">VegReview</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="../veggies">Random Veggie</a></li>
+            <li><a href="../veggies">List of Veggies</a></li>
+            <li><a href="../">Return Home</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <section>
+            <h2><%= veggie.name %></h2>
+            <!-- <a href="/veggies/<%=veggie._id %>/edit">Edit</a> -->
+            <h2>Veggie Info</h2>
+            <ul>
+                <li>
+                    Name: <%= veggie.name %>
+                </li>
+                <li>
+                    Scientific Name: <%= veggie.scientific_name %>
+                </li>
+                <li>
+                    Country of Origin: <%= veggie.origin %>
+                </li>
+                <li>
+                    Favorite Recipe: <%= veggie.recipe %>
+                <li>Name: <%= veggie.name %>
+                </li>
+            </ul>
+        </section>
+        <div>
+            <ul>
+                <% veggie.reviews.forEach(review  => { %>
+                    <li> <%= review.title %> </li>
+                    <li> <%= review.body %> </li>
+                    <li> <%= review.rating %> </li>
+                <% }) %>
+            </ul>
+        </div>
+        </form>
+    </main>
+</body>
