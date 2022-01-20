@@ -2,6 +2,8 @@ require('dotenv').config()
 /* ==== External Modules ==== */
 const express = require('express')
 const methodOverride = require('method-override')
+const session = require("express-session");
+const passport = require("passport");
 
 /* ==== Internal Modules ==== */
 const routes = require('./routes')
@@ -9,8 +11,15 @@ const routes = require('./routes')
 /* ==== Instanced Modules  ==== */
 const app = express()
 
+// connect to the MongoDB with mongoose
+require('./config/database');
+
+// initialize Oauth process for login requests
+require("./config/passport");
+
 /* ====  Configuration  ==== */
 const PORT = process.env.PORT || 4000
+
 
 app.set('view engine', 'ejs')
 
@@ -25,7 +34,18 @@ app.use(express.static('public'))
 app.use((req, res, next) => {
 	console.log(req.url, req.method)
 	next()
-})
+});
+// session middleware
+app.use(
+	session({
+		secret: "mayonnaise sandwiches",
+		resave: false,
+		saveUninitialized: true,
+	})
+);
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* ====  Routes & Controllers  ==== */
 //Home Route
