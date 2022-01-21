@@ -49,18 +49,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* ====  Routes & Controllers  ==== */
-//Home Route
-// app.get("/", (req, res) => {
-// 	res.render("home", {
-// 		user: req.user,
-// 	});
-// });
-//404 Route
-// app.get((req, res) => {
-// 	res.send("404! Error! Page not found :(");
-// });
-
 //Internal Routes
 app.use('/', require("./routes/index"));
 app.use("/home", require("./routes/home"));
