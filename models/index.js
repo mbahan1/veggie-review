@@ -16,4 +16,5 @@ mongoose
 module.exports = {
 	Veggie: require('./Veggie'),
 	Review: require('./Review'),
+	Patron: require('./Patron'),
 }
