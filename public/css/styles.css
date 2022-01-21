@@ -1,0 +1,17 @@
+.flex-container {
+  display: flex;
+}
+
+.vegContainer {
+    justify-content: center;
+    text-align: center;
+}
+
+.inlineList {
+    display: inline;
+}
+
+.textLeft {
+    display: inline-block;
+    text-align: left;
+}

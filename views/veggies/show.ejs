@@ -10,38 +10,35 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">VegReview</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="../veggies">Random Veggie</a></li>
-            <li><a href="../veggies">List of Veggies</a></li>
-            <li><a href="../">Return Home</a></li>
-          </ul>
+            <a href="#" class="brand-logo">VegReview</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="../veggies">Random Veggie</a></li>
+                    <li><a href="../veggies">List of Veggies</a></li>
+                    <li><a href="../">Return Home</a></li>
+                </ul>
         </div>
-      </nav>
-      <main>
-        <section>
+    </nav>
+<main>
+    <section>
+        <div class="vegContainer">
             <h2><%= veggie.name %></h2>
-            <!-- <a href="/veggies/<%=veggie._id %>/edit">Edit</a> -->
-            <h2>Veggie Info</h2>
-            <ul>
-                <li>
-                    Name: <%= veggie.name %>
-                </li>
-                <li>
-                    Scientific Name: <%= veggie.scientific_name %>
-                </li>
-                <li>
-                    Country of Origin: <%= veggie.origin %>
-                </li>
-                <li>
-                    Favorite Recipe: <%= veggie.recipe %>
-                <li>Name: <%= veggie.name %>
-                </li>
-            </ul>
-        </section>
-        <li>
-            <a href="../reviews/new">Add a Review</a>
-        </li>
+                <img src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %>"><br>  
+                        <h3>Veggie Info</h3>
+                                <div class="textLeft">
+                                <ul>
+                                    <li><strong>Name:</strong> <%= veggie.name %></li>
+                                    <li><strong>Scientific Name:</strong>  <%= veggie.scientific_name %></li>
+                                    <li><strong>Country of Origin:</strong> <%= veggie.origin %></li>
+                                    <li><strong>Favorite Recipe:</strong> <%= veggie.recipe %></li>
+                                </ul>
+                            </div><br>
+            <div class="inlineList">
+                <a href="../reviews/new">Add Review</a> |
+                <a href="/veggies/<%=veggie._id %>/edit">Edit Review</a>
+            </div>   
+
+        </div>
+    </section>
         <div>
             <ul>
                 <% veggie.reviews.forEach(review  => { %>
@@ -51,7 +48,7 @@
                 <% }) %>
             </ul>
         </div>
-        </form>
-    </main>
+        <!-- </form> -->
+</main>
 </body>
 </html>
