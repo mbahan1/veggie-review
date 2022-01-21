@@ -11,9 +11,7 @@ const reviewSchema = new mongoose.Schema(
 			required: [true, "You must provide text for your review"],
 		},
         rating: { 
-			type: Number,
-			required: [true, "You must provide a rating for your review"],
-
+			type: Number, 
 		},
         //referenced relationship
         veggie: {type: mongoose.Schema.Types.ObjectId, ref:"Veggie"},
