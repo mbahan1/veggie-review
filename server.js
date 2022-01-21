@@ -27,8 +27,11 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 // method override middleware
 app.use(methodOverride("_method"));
+
 // serve public files
-app.use(express.static("public"));
+// app.use(express.static("/public"));
+app.use("/public", express.static(__dirname+"/public"))
+
 // logger
 app.use((req, res, next) => {
 	console.log(req.url, req.method);
@@ -64,19 +67,6 @@ app.use("/home", require("./routes/home"));
 app.use("/veggies", require("./routes/veggies"));
 app.use("/reviews", require("./routes/reviews"));
 app.use("/patrons", require("./routes/patrons"));
-// TEST CODE FOR OAUTH 
-// app.get(
-// 		"/auth/google",
-// 		passport.authenticate("google", { scope: ["profile", "email"] })
-// );
-
-// app.get(
-// 		"/auth/google/callback",
-// 		passport.authenticate("google", {
-// 			successRedirect: "/patron",
-// 			failureRedirect: "/home",
-// 		})
-// );
 
 /* ====  Server Listener  ==== */
 app.listen(PORT, () => {
