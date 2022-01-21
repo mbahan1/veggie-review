@@ -23,26 +23,26 @@ const idx = (req, res) => {
 
 // Show
 
-const show = (req, res) => {
-	console.log(req.params.id)
-	db.Veggie.findById(req.params.id, function (err, foundVeggie) {
-		if (err) return res.send(err)
-
-		const context = { veggie: foundVeggie }
-		return res.render('veggies/show', context)
-	})
-}
-
 // const show = (req, res) => {
 // 	console.log(req.params.id)
-// 	db.Veggie.findById(req.params.id)
-// 		.populate("reviews")
-// 		.exec((err, foundVeggie) => {
-// 			if (err) return res.send(err);
-// 			const context = { veggie: foundVeggie };
-// 			return res.render('veggies/show', context);
+// 	db.Veggie.findById(req.params.id, function (err, foundVeggie) {
+// 		if (err) return res.send(err)
+
+// 		const context = { veggie: foundVeggie }
+// 		return res.render('veggies/show', context)
 // 	})
 // }
+
+const show = (req, res) => {
+	console.log(req.params.id)
+	db.Veggie.findById(req.params.id)
+		.populate("reviews")
+		.exec((err, foundVeggie) => {
+			if (err) return res.send(err);
+			const context = { veggie: foundVeggie };
+			return res.render('veggies/show', context);
+	})
+}
 
 // New
 
