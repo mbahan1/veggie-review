@@ -18,20 +18,18 @@ router.get(
 // Google OAuth callback route, req. after user login
 router.get(
     "/oauth2callback",passport.authenticate("google", 
-        {successRedirect: '/patrons',
-        failureRedirect: '/',
+        {successRedirect: '/home',
+        failureRedirect: '/home',
 	})
 );
 
 // Google OAuth logout route
 router.get("/logout", function (req, res) 
     {req.logout(); // destroy log in session from storage
-    res.redirect("/"); // send user to homepage
+    res.redirect("/home"); // send user to homepage
     });
 
-module.exports = {
-    router, 
-    veggies: require('./veggies'),
-    reviews: require('./reviews'),
-    patrons: require('./patrons'),
-};
+module.exports = router;
+    // veggies: require('./veggies'),
+    // reviews: require('./reviews'),
+    // patrons: require('./patrons'),

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const ctrl = require("../controllers");
+const ctrl = require("../controllers/patrons");
 
 // GET /patrons
-router.get("/patrons", ctrl.patrons.index);
+router.get("/", ctrl.index);
 
 // POST /facts
 // We will already have access to the logged in student on
