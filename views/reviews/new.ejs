@@ -28,15 +28,17 @@
 				<p>
 					<textarea type="text" name="body" placeholder="Body"></textarea>
 				</p>
-				<p>
-					<select name="veggie">
-						<option value="test">veggie placeholder</option>
+                <div>
+					<select class="browser-default" name="veggie">
+						<option value="" disabled selected>Choose your Veggie</option>
 						<% veggies.forEach ( veggie => { %>
 						<option value="<%= veggie._id %>"><%= veggie.name %></option>
 						<% }) %>
 					</select>
-				</p>
-				<input type="submit" value="Create Review" />
+                </div>
+                <div>
+				    <input type="submit" value="Create Review" />
+                </div>
 			</form>
 		</main>
 	</body>
