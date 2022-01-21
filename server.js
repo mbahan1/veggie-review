@@ -62,18 +62,18 @@ app.use("/veggies", routes.veggies);
 app.use("/reviews", routes.reviews);
 
 // TEST CODE FOR OAUTH 
- app.get(
-		"/auth/google",
-		passport.authenticate("google", { scope: ["profile", "email"] })
- );
+// app.get(
+// 		"/auth/google",
+// 		passport.authenticate("google", { scope: ["profile", "email"] })
+// );
 
- app.get(
-		"/auth/google/callback",
-		passport.authenticate("google", {
-			successRedirect: "/patron",
-			failureRedirect: "/home",
-		})
- );
+// app.get(
+// 		"/auth/google/callback",
+// 		passport.authenticate("google", {
+// 			successRedirect: "/patron",
+// 			failureRedirect: "/home",
+// 		})
+// );
 
 /* ====  Server Listener  ==== */
 app.listen(PORT, () => {

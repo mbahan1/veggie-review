@@ -57,7 +57,8 @@ passport.deserializeUser(function (id, done) {
 //  app.get(
 // 		"/auth/google/callback",
 // 		passport.authenticate("google", {
-// 			successRedirect: "/patrons",
+// 			successRedirect: "/home",
 // 			failureRedirect: "/home",
 // 		})
 //  );
+

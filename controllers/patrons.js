@@ -1,13 +1,15 @@
-const Patron = require("../models/Patron");
+// const Patron = require("../models/Patron");
+const db = require("../models");
+
 
 module.exports = {
 	index,
-	addFact,
-	delFact,
+	// addFact,
+	// delFact,
 };
 
 function index(req, res, next) {
-	Patron.find({}, function (err, patrons) {
+	db.Patron.find({}, function (err, patrons) {
 		res.render("patrons/index", {
 			patrons,
 			user: req.user
@@ -15,6 +17,6 @@ function index(req, res, next) {
 	});
 }
 
-function addFact(req, res) {}
+// function addFact(req, res) {}
 
-function delFact(req, res) {}
+// function delFact(req, res) {}
