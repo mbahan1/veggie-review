@@ -5,6 +5,7 @@
 		<title>VegReview🥕 || New Review</title>
 	</head>
 	<body>
+        
         <nav>
             <div class="nav-wrapper">
               <a href="#" class="brand-logo">VegReview</a>
@@ -16,17 +17,18 @@
             </div>
           </nav>
 		<main>
+            <div class="container">
 			<form action="/reviews" method="POST">
 				<p>
 					<input
 						class="input-field"
 						type="text"
 						name="title"
-						placeholder="Title"
+						placeholder=" Review Title"
 					/>
 				</p>
 				<p>
-					<textarea type="text" name="body" placeholder="Body"></textarea>
+					<textarea type="text" name="body" placeholder="Tell us how you really feel!"></textarea>
 				</p>
                 <div>
 					<select class="browser-default" name="veggie">
@@ -36,10 +38,12 @@
 						<% }) %>
 					</select>
                 </div>
+                <br>
                 <div>
-				    <input type="submit" value="Create Review" />
+				    <input type="submit" value="Submit Review" />
                 </div>
 			</form>
 		</main>
+        </div>
 	</body>
 </html>
