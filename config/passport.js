@@ -3,8 +3,7 @@ const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const Patron = require("../models/Patron");
 const express = require("express");
 
-/* ==== Instanced Modules  ==== */
-const app = express();
+
 
 // passport.use to plug-in login options
 passport.use(
@@ -47,18 +46,3 @@ passport.deserializeUser(function (id, done) {
 		done(err, patron); // creates req.user
 	});
 });
-
-// Test for OAuth
-//  app.get(
-// 		"/auth/google",
-// 		passport.authenticate("google", { scope: ["profile", "email"] })
-//  );
-
-//  app.get(
-// 		"/auth/google/callback",
-// 		passport.authenticate("google", {
-// 			successRedirect: "/home",
-// 			failureRedirect: "/home",
-// 		})
-//  );
-

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const ctrl = require("../controllers");
+const ctrl = require("../controllers/reviews");
 
 // Rest Routes as a guide. Use "Authors" routes as a guide here if you're stuck!
 /*
@@ -12,14 +12,13 @@ const ctrl = require("../controllers");
  * Delete - DELETE - /articles/:id  - Functional - Deletes article by id from request
  */
 
-router.get("/", ctrl.reviews.idx);
-router.get("/new", ctrl.reviews.newReview);
-router.get("/:id", ctrl.reviews.show);
+router.get("/", ctrl.idx);
+router.get("/new", ctrl.newReview);
+router.get("/:id", ctrl.show);
 
-router.post("/", ctrl.reviews.create);
-router.put("/:id", ctrl.reviews.update);
-router.delete("/:id", ctrl.reviews.destroy);
-router.get("/:id/edit", ctrl.reviews.edit);
+router.post("/", ctrl.create);
+router.put("/:id", ctrl.update);
+router.delete("/:id", ctrl.destroy);
+router.get("/:id/edit", ctrl.edit);
 
 module.exports = router;
-

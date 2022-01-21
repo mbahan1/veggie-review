@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 // session middleware
 app.use(
 	session({
-		secret: "mayonnaise sandwiches",
+		secret: "mayonnaise_sandwiches",
 		resave: false,
 		saveUninitialized: true,
 	})
@@ -48,19 +48,22 @@ app.use(passport.session());
 
 /* ====  Routes & Controllers  ==== */
 //Home Route
-app.get("/", (req, res) => {
-	res.render("home", {
-		user: req.user,
-	});
-});
+// app.get("/", (req, res) => {
+// 	res.render("home", {
+// 		user: req.user,
+// 	});
+// });
 //404 Route
-app.get((req, res) => {
-	res.send("404! Error! Page not found :(");
-});
-//Internal Routes
-app.use("/veggies", routes.veggies);
-app.use("/reviews", routes.reviews);
+// app.get((req, res) => {
+// 	res.send("404! Error! Page not found :(");
+// });
 
+//Internal Routes
+app.use('/', require("./routes/index"));
+app.use("/home", require("./routes/home"));
+app.use("/veggies", require("./routes/veggies"));
+app.use("/reviews", require("./routes/reviews"));
+app.use("/patrons", require("./routes/patrons"));
 // TEST CODE FOR OAUTH 
 // app.get(
 // 		"/auth/google",
