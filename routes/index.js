@@ -11,23 +11,22 @@ router.get('/', function (req, res) {
 router.get(
     "/auth/google",
     passport.authenticate("google", 
-        { scope: ["profile", "email"] 
+    {scope: ["profile", "email"] 
     })
 );
 
-// Google callback route
+// Google OAuth callback route, req. after user login
 router.get(
-	'/oauth2callback',
-	passport.authenticate('google', 
-        {successRedirect: '/users',
-		failureRedirect: '/',
+    "/oauth2callback",passport.authenticate("google", 
+        {successRedirect: '/patrons',
+        failureRedirect: '/',
 	})
 );
 
-// OAuth logout route
+// Google OAuth logout route
 router.get("/logout", function (req, res) 
-    {req.logout();
-        res.redirect("/");
+    {req.logout(); // destroy log in session from storage
+    res.redirect("/"); // send user to homepage
     });
 
 module.exports = {
