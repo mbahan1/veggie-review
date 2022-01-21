@@ -42,7 +42,7 @@ const show = (req, res) => {
         .populate("veggie")
         .exec((err, foundReview) => {
             if(err) return res.send(err);
-            const context = {article: foundReview};
+            const context = {review: foundReview};
             res.render("reviews/show", context)
         })
 };
@@ -53,7 +53,7 @@ const create = (req, res) => {
 	db.Review.create(req.body, (err, createdReview) => {
 		if (err) return res.send(err);
         db.Veggie.findById(createdReview.veggie)
-            .exec(function(err, foundveggie){
+            .exec(function(err, foundVeggie){
                 if(err) return res.send(err);
                 foundVeggie.reviews.push(createdReview)
                 foundAVeggie.save();
