@@ -77,5 +77,5 @@ app.use("/reviews", routes.reviews);
 
 /* ====  Server Listener  ==== */
 app.listen(PORT, () => {
-	console.log(`Dope vegetable reviews available on http://localhost:${PORT}!`);
+	console.log(`Opinions about vegetables available on ${PORT}!`);
 });
