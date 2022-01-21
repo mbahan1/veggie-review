@@ -1,4 +1,4 @@
-const Patron = require("../models/patron");
+const Patron = require("../models/Patron");
 
 module.exports = {
 	index,

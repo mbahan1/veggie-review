@@ -1,6 +1,6 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-const Patron = require("../models/patron");
+const Patron = require("../models/Patron");
 const express = require("express");
 
 /* ==== Instanced Modules  ==== */
