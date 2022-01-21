@@ -1,6 +1,7 @@
 // const Patron = require("../models/Patron");
 const db = require("../models");
 
+
 module.exports = {
 	index,
 	// addFact,
