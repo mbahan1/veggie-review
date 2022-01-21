@@ -2,19 +2,13 @@ const db = require("../models");
 
 // Rest Routes
 /*
- * Index - GET - /authors  - Presentational - respond with all authors DONE
-
- * New - GET - /authors/new  - Presentational Form - a page with a form to create a new author DONE
-
- * Show - GET - /authors/:id  - Presentational - respond with specific author by id DONE
- * 
- * Create - Post - /authors  - Functional - recieve data from new route to create a author DONE
- * 
- * Edit - GET - /authors/:id/edit  - Presentational Form - respond with a form prefilled with author data
- * 
- * Update - PUT - /authors/:id  - Functional - recieve data from edit to update a specific author
- * 
- * Delete - DELETE - /authors/:id  - Functional - Deletes author by id from request
+ * Index - GET - /reviews  - Presentational - respond with all reviews DONE
+ * New - GET - /reviews/new  - Presentational Form - a page with a form to create a new review DONE
+ * Show - GET - /reviews/:id  - Presentational - respond with specific review by id DONE
+ * Create - Post - /reviews  - Functional - recieve data from new route to create a review DONE
+ * Edit - GET - /reviews/:id/edit  - Presentational Form - respond with a form prefilled with review data
+ * Update - PUT - /reviews/:id  - Functional - recieve data from edit to update a specific review
+ * Delete - DELETE - /reviews/:id  - Functional - Deletes review by id from request
  */
 
 // Index
@@ -56,7 +50,8 @@ const create = (req, res) => {
             .exec(function(err, foundVeggie){
                 if(err) return res.send(err);
                 foundVeggie.reviews.push(createdReview)
-                foundAVeggie.save();
+                foundVeggie.save();
+				res.redirect("reviews");
             })
 	});
 };
@@ -66,7 +61,7 @@ const create = (req, res) => {
 const edit = (req, res) => {
 	db.Review.findById(req.params.id, (err, foundReview) => {
 		if (err) return res.send(err);
-		const context = { article: foundReview };
+		const context = { review: foundReview };
 		return res.render("reviews/edit", context);
 	});
 };
