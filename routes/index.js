@@ -33,4 +33,5 @@ module.exports = {
     router, 
     veggies: require('./veggies'),
     reviews: require('./reviews'),
+    patrons: require('./patrons'),
 };
