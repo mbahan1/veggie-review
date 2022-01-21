@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const patronsCtrl = require("../controllers/patrons");
 
-// GET /students
+// GET /patrons
 router.get("/patrons", patronsCtrl.index);
 
 // POST /facts

@@ -1,6 +1,10 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const Patron = require("../models/patron");
+const express = require("express");
+
+/* ==== Instanced Modules  ==== */
+const app = express();
 
 // passport.use to plug-in login options
 passport.use(
@@ -33,8 +37,8 @@ passport.use(
 );
 
 // passport.serializeUser is called once at login to create session
-passport.serializeUser(function (student, done) {
-	done(null, student.id);
+passport.serializeUser(function (patron, done) {
+	done(null, patron.id);
 });
 
 // passport.deserializeUser is called with each request, decodes cookie, creates req.user 
@@ -43,3 +47,17 @@ passport.deserializeUser(function (id, done) {
 		done(err, patron); // creates req.user
 	});
 });
+
+// Test for OAuth
+//  app.get(
+// 		"/auth/google",
+// 		passport.authenticate("google", { scope: ["profile", "email"] })
+//  );
+
+//  app.get(
+// 		"/auth/google/callback",
+// 		passport.authenticate("google", {
+// 			successRedirect: "/patrons",
+// 			failureRedirect: "/home",
+// 		})
+//  );
