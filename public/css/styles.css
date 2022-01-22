@@ -1,7 +1,7 @@
 :root {
 --bg: white;
 --main-color: #6A8EAE;
---secondary-color:#6A8EAE; 
+/* --secondary-color:#6A8EAE;  */
 }
 
 body {
@@ -23,9 +23,23 @@ color: var(--main-color);
 }
 
 .textContainer {
-    justify-content: center;
+    justify-content: center; 
     text-align: center;
     margin: 100px 100px 100px 100px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid #9BD1E5;
+    padding: 10px;
+}
+
+.textContainerLeft {
+    justify-content: center; 
+    text-align: left;
+    margin: 100px 100px 100px 100px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid #9BD1E5;
+    padding: 10px;
 }
 
 .inlineList {
@@ -36,7 +50,6 @@ color: var(--main-color);
     display: inline-block;
     text-align: left;
 }
-
 
 /* 
 .clickme {
