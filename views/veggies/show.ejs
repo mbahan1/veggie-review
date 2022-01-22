@@ -33,8 +33,8 @@
                                         <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
                                             <a href="<%=veggie.recipe_URL%>">
                                         <% } %>
-                                            <%= veggie.recipe %></li>
-                                    <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
+                                            <%= veggie.recipe %> </li>
+                                    <% if (veggie.recipe_URL && veggie.recipe_URL.length > 0) { %>
                                     </a>
                                     <% } %>
 
@@ -60,7 +60,6 @@
                         <li> <%= review.body %> </li>
                         <% }); %>
                     </ul>
-                    <% }) %>
                 </div>
                 <% } else { %>
                 <h5>No Reviews Yet</h5>

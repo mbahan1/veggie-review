@@ -1,10 +1,19 @@
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 50px 75px 100px;
 }
 
 .vegContainer {
     justify-content: center;
     text-align: center;
+}
+
+.textContainer {
+    justify-content: center;
+    text-align: center;
+    margin: 100px 100px 100px 100px;
 }
 
 .inlineList {
