@@ -3,20 +3,16 @@
 
 <head>
     <%- include ('../partials/head.ejs') %>
-    <title>VegReview🥕 || <%= veggie.name %>
+    <title><%= veggie.name %>
     </title>
 </head>
 
 <body>
     <nav>
-        <div class="nav-wrapper">
-            <a href="../veggies" class="brand-logo">VegReview</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="../reviews">All Reviews</a></li>
-                    <li><a href="../veggies">List of Veggies</a></li>
-                    <li><a href="../">Return Home</a></li>
-                </ul>
-        </div>
+            <!-- <a href="../veggies" class="brand-logo">VegReview</a> -->
+                    <a href="../reviews">All Reviews</a></li>
+                    <a href="../veggies">List of Veggies</a></li>
+                    <a href="../">Return Home</a>
     </nav>
 <main>
     <section>
@@ -37,18 +33,14 @@
                                     <% if (veggie.recipe_URL && veggie.recipe_URL.length > 0) { %>
                                     </a>
                                     <% } %>
-
                                 </ul>
                             </div><br>
             <div class="inlineList">
                 <a href="../reviews/new">Add Review</a> 
                 <!-- <a href="/veggies/<%=veggie._id %>/edit">Edit Review</a> -->
             </div>   
-
         </div>
     </section>
-    <br>
-        <section class="container">
             <% if (veggie.reviews.length) { %>
                 <h4><%= veggie.reviews.length %> people feel strongly about <%= veggie.name %>.</h1>
                 <div>
@@ -59,7 +51,6 @@
                         <li> <%= review.createdAt %> </li>
                         <li> <%= review.body %> </li>
                         <% }); %>
-                        
                     </ul>
                 </div>
                 <% } else { %>
