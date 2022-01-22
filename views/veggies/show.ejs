@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">VegReview</a>
+            <a href="../veggies" class="brand-logo">VegReview</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="../reviews">All Reviews</a></li>
                     <li><a href="../veggies">List of Veggies</a></li>
@@ -48,21 +48,22 @@
         </div>
     </section>
     <br>
-        <section>
-            <!-- this h1 is just for testing purposes -->
-            <h1>There should be <%= veggie.reviews.length %> reviews here</h1>
+        <section class="container">
             <% if (veggie.reviews.length) { %>
+                <h4><%= veggie.reviews.length %> people feel strongly about <%= veggie.name %>.</h1>
                 <div>
                     <ul>
                         <% veggie.reviews.forEach(review => { %>
-                        <li> <%= review.title %> </li>
+                        <li> <br></li>
+                        <li><strong> <%= review.title %></strong> </li>
                         <li> <%= review.createdAt %> </li>
                         <li> <%= review.body %> </li>
                         <% }); %>
+                        
                     </ul>
                 </div>
                 <% } else { %>
-                <h5>No Reviews Yet</h5>
+                <h5>No reviews yet, start the conversation!</h5>
                 <% } %>
         </section>
 </main>
