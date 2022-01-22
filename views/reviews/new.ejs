@@ -2,17 +2,23 @@
 <html lang="en">
 	<head>
 		<%- include ('../partials/head.ejs') %>
-		<title>New Review</title>
+		<title>VegReview🥕 || New Review</title>
 	</head>
 	<body>
         
         <nav>
+			<div class="topnav">
 				<a href="../reviews">All Reviews</a>
 				<a href="../veggies">List of Veggies</a>
 				<a href="../">Return Home</a>
+			</div>
           </nav>
 		<main>
+
+			<h2>New Review</h2>
             <div class="container">
+
+				
 			<form action="/reviews" method="POST">
 				<p>
 					<input

@@ -3,48 +3,31 @@
 
 <head>
     <%- include ('./partials/head.ejs') %>
-        <title>VegReview🥕</title>
-        <h1>Welcome to VegReview!</h1>
-</head>
+        <title>VegReview:carrot:</title>
 
-<body>
+</head>
     <nav>
         <div class="topnav">
-            <a class="active" href="#home" >Home</a>
-            <a href="/veggies">List of Veggies</a>
+            <!-- <a href="#home" >Home</a> -->
+            
             <% if (user) { %>
-                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
                 <% } else { %>
                     <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
                 <% } %>
+                <a href="/veggies">List of Veggies</a>
         </div>
 </nav>
 
 
-    <div class="textContainer">
-        <p>"Down with Greens
-        I don’t like peas,
-        I don’t like beans,
-        I don’t like squash
-        Or other greens.
-        Instead I’d like
-        Some cake and pie,
-        A cone with ice cream
-        Stacked sky high.
-        It seems that when
-        You’re hungriest,
-        You’d eat the foods
-        You like the best.
-        So pass the sprinkles,
-        If you please,
-        And pass the pie,
-        But keep your peas.
-        
-        ~ Barbara Vance"</p>
-        
-        <p><a href="https://www.merriam-webster.com/words-at-play/fruit-vs-vegetable" target="_blank">Vegetable vs. Fruit</a></p>
+<body>       
 
-        <!-- class="clickme button" -->
+    <div class="textContainer">
+    <h1>Welcome to VegReview!</h1>
+
+    <p><strong>Everyone has their own unique view of vegetables. View the list of veggies for facts and other people's thoughts on each.
+
+    If you want to let the world know YOUR thoughts on the subject, sign in and choose a vegetable from the list to review! </strong></p>
 
     </div>
 
