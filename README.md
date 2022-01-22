@@ -19,7 +19,7 @@ Project promt to set-up express application with the following
  -A README (this thing, right here)
 
 
-# PNG License
+# PNG Licenser
 isolated PNG Designed By Ylivdesign from https://pngtree.com/freepng/smiling-vegetables-icons-set-vector-flat_5315793.html?sol=downref&id=bef
 
 # Wireframes 
