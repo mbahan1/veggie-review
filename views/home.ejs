@@ -4,27 +4,23 @@
 <head>
     <%- include ('./partials/head.ejs') %>
         <title>VegReview:carrot:</title>
+        <h1>Welcome to VegReview!</h1>
 </head>
 
 <body>
     <nav>
-        <h1>Welcome to VegReview!</h1>
-            <ul>
-                <li><a class="waves-effect waves-light btn-large" href="/veggies">List of Veggies</a></li>
-            </ul>
-    </nav>
-
-    <div>    
-        <ul class="right">
-            <li>
-                <% if (user) { %>
+        <div class="topnav">
+            <a class="active" href="#home" class="clickme button">Home</a>
+            <a href="/veggies">List of Veggies</a>
+            <% if (user) { %>
                     <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
                 <% } else { %>
                     <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
                 <% } %>
-            </li>
-        </ul>
-    </div>
+        </div>
+
+</nav>
+
 
     <div class="textContainer">
         <p>"Down with Greens
@@ -48,7 +44,7 @@
         ~ Barbara Vance"</p>
         
         
-        <p><a href="https://www.merriam-webster.com/words-at-play/fruit-vs-vegetable" target="_blank">Vegetable vs. Fruit</a></p>
+        <p><a href="https://www.merriam-webster.com/words-at-play/fruit-vs-vegetable" target="_blank" class="clickme button">Vegetable vs. Fruit</a></p>
 
     </div>
 
