@@ -2,20 +2,16 @@
 <html lang="en">
 <head>
   <%- include ('../partials/head.ejs') %>
-    <title>All Reviews</title>
+    <title>VegReview || Reviews</title>
 </head>
 
 <body>
-  <nav>
-        <div class="nav-wrapper">
-          <a href="../veggies" class="brand-logo">VegReview</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="../reviews">All Reviews</a></li>
-            <li><a href="../veggies">List of Veggies</a></li>
-            <li><a href="../">Return Home</a></li>
-        </ul>
+        <nav>
+          <div class="topnav">
+          <a href="../veggies">List of Veggies</a>
+          <a href="../">Return Home</a>
         </div>
-      </nav>
+        </nav>
 
     <section>
       <div class="vegContainer">
@@ -25,19 +21,20 @@
 
     <main>
       <div class="container">
-        <p>
-          <a href="/reviews/new">Add a NEW Review</a>
-        </p><br>
+        
     <% if(!reviews.length) { %>
     <p>There are no reviews available. :(</p>
     <% } %> 
       <div class="textContainerLeft">
+        <p>
+          <a href="/reviews/new">Add a NEW Review</a>
+        </p>
         <% reviews.forEach(review=> { %>
             <div>
               <review>
                 <div>
                   <div>
-                    <div><%= review.veggie.name %></div><br><br>
+                    <div><%= review.veggie.name %></div><br>
                     <strong><%= review.title%></strong><br>
                     <small>
                       <%= new Date(review.createdAt).toLocaleString() %>
