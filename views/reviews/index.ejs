@@ -26,21 +26,19 @@
     <main>
       <div class="container">
         <p>
-        <li>
-            <a href="/reviews/new">Add a NEW Review</a>
-        </li>
-        </p>
+          <a href="/reviews/new">Add a NEW Review</a>
+        </p><br>
     <% if(!reviews.length) { %>
     <p>There are no reviews available. :(</p>
-    <% } %>
-      <div>
+    <% } %> 
+      <div class="textContainerLeft">
         <% reviews.forEach(review=> { %>
             <div>
               <review>
                 <div>
                   <div>
-                    <div><%= review.veggie.name %></div>
-                    <strong><%= review.title%></strong>
+                    <div><%= review.veggie.name %></div><br><br>
+                    <strong><%= review.title%></strong><br>
                     <small>
                       <%= new Date(review.createdAt).toLocaleString() %>
                     </small>
