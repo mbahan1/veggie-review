@@ -30,6 +30,7 @@ app.use(methodOverride("_method"));
 
 // serve public files
 // app.use(express.static("/public"));
+
 app.use("/public", express.static(__dirname+"/public"))
 
 // logger
