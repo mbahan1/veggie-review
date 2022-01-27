@@ -1,3 +1,4 @@
+testing testing testing
 # VegReview
 A delightful site for reading and writing reviews about vegetables. Positive or negative, we wanted to give people a page to express their opinions about veggies and maybe learn something new or a new recipe using them along the way.
 
@@ -19,7 +20,7 @@ Project promt to set-up express application with the following
  -A README (this thing, right here)
 
 
-# PNG Licenser
+# PNG License
 isolated PNG Designed By Ylivdesign from https://pngtree.com/freepng/smiling-vegetables-icons-set-vector-flat_5315793.html?sol=downref&id=bef
 
 # Wireframes 
