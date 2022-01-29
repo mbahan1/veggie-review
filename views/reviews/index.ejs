@@ -6,36 +6,41 @@
 </head>
 
 <body>
-        <nav>
-          <div class="topnav">
-          <a href="../veggies">List of Veggies</a>
-          <a href="../">Return Home</a>
+  <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">VegReview</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="../reviews">All Reviews</a></li>
+            <li><a href="../veggies">List of Veggies</a></li>
+            <li><a href="../">Return Home</a></li>
+        </ul>
         </div>
-        </nav>
+      </nav>
 
     <section>
-      <div class="vegContainer">
-        <h3>All Reviews</h3>
+      <div>
+        <p class="title">All Reviews</p>
       </div>
     </section>
 
     <main>
       <div class="container">
-        
+        <p>
+        <li>
+            <a href="/reviews/new">Add a Review</a>
+        </li>
+        </p>
     <% if(!reviews.length) { %>
     <p>There are no reviews available. :(</p>
-    <% } %> 
-      <div class="textContainerLeft">
-        <p>
-          <a href="/reviews/new">Add a NEW Review</a>
-        </p>
+    <% } %>
+      <div>
         <% reviews.forEach(review=> { %>
             <div>
               <review>
                 <div>
                   <div>
-                    <div><%= review.veggie.name %></div><br>
-                    <strong><%= review.title%></strong><br>
+                    <div><%= review.veggie.name %></div>
+                    <strong><%= review.title%></strong>
                     <small>
                       <%= new Date(review.createdAt).toLocaleString() %>
                     </small>
@@ -46,7 +51,7 @@
                 <div>
                   <section>
                     <div>
-                      <a href="/reviews/<%= review._id %>/edit">Edit</a> |
+                      <a href="/reviews/<%= review._id %>/edit">Edit</a>
                       <a href="/reviews/<%= review._id %>/?_method=DELETE">Remove</a>
                     </div>
                   </section>

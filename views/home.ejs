@@ -4,34 +4,27 @@
 <head>
     <%- include ('./partials/head.ejs') %>
         <title>VegReview:carrot:</title>
-
 </head>
+
+<body>
     <nav>
-        <div class="topnav">
-            <!-- <a href="#home" >Home</a> -->
-            
-            <% if (user) { %>
-                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+        <h1>Welcome to VegReview!</h1>
+            <ul>
+                <li><a class="waves-effect waves-light btn-large" href="/veggies">List of Veggies</a></li>
+            </ul>
+    </nav>
+
+    <div>    
+        <ul class="right">
+            <li>
+                <% if (user) { %>
+                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
                 <% } else { %>
                     <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
                 <% } %>
-                <a href="/veggies">List of Veggies</a>
-        </div>
-</nav>
-
-
-<body>       
-
-    <div class="textContainer">
-    <h1>Welcome to VegReview!</h1>
-
-    <p><strong>Everyone has their own unique view of vegetables. View the list of veggies for facts and other people's thoughts on each.
-
-    If you want to let the world know YOUR thoughts on the subject, sign in and choose a vegetable from the list to review! </strong></p>
-
+            </li>
+        </ul>
     </div>
-
-
 </body>
 
 </html>
