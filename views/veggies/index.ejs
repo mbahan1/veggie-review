@@ -31,10 +31,12 @@
                     <% } %>
                 <div class="allVeg">
                     <% veggies.forEach(veggie=> { %>   
+                        <div class="eachVeg">
                         <a href="/veggies/<%= veggie._id %>">
-                            <img src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %> "><br>
+                            <img class="vegPic" src="/public/PNGs/<%= veggie.name %>.png" alt="<%=veggie.name %> "><br>
                             <%= veggie.name %>
                         </a>
+                        </div>
                     <% }) %>
                 </div>
             </main>
@@ -42,3 +44,5 @@
     </body>
 
 </html>
+
+ <!-- height="200" -->

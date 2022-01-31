@@ -62,3 +62,24 @@ body {
 #addReview{
     background-color: #8DAA9D;
 }
+.allVeg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.eachVeg{
+    margin: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.eachVeg a{
+    margin-top: auto;
+    color: #522B47;
+}
+.vegPic{
+    max-width:150px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+}
