@@ -33,3 +33,11 @@ isolated PNG Designed By Ylivdesign from https://pngtree.com/freepng/smiling-veg
     (Design/UserFlow.drawio.png)
 
 # ERD database model
+
+
+
+# Color scheme
+#FBF5F3- "snow" off-white, background and some text
+#8DAA9D- "morning blue" green, banners and buttons
+#522B47- "dark byzantium" purple, some text
+

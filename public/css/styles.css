@@ -3,14 +3,13 @@
 }
 #welcome{
     background-color: #8DAA9D;
+    color: #FBF5F3;
     text-align: center;
     padding-top: 20px;
 }
 #welcomeNav{
     margin-top: 20px;
     background-color:#8DAA9D;
-    /* display: flex;
-    justify-content: space-between; */
 }
 #welcomeNav ul {
     display: flex;
@@ -19,7 +18,16 @@
     margin-right: 20%;
 }
 #firstList {
-    color: #FBF5F3;
+    color: #522B47;
+    font-weight: bold;
+}
+#logIn{
+    color: #522B47;
+    font-weight: bold;
+}
+#logOut{
+    color: #522B47;
+    font-weight: bold;
 }
 .nav-wrapper {
     padding-left: 10% !important;
@@ -38,4 +46,19 @@ body {
 .nav-wrapper{
     background-color: #8DAA9D;
 }
-
+/* .vegTop{
+    display: flex;
+    justify-content: center;
+    text-align: center;		
+    flex-wrap: wrap;
+} */
+#listHeader{
+    text-align: center;
+    margin: 20px;
+}
+#centeredButton{
+    text-align: center;
+}
+#addReview{
+    background-color: #8DAA9D;
+}

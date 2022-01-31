@@ -21,20 +21,21 @@
         </nav>
         <div class="container">
             <main>
-                <div class="vegContainer">
-                    <h3>List of Veggies</h3><br> <!-- add if about user to show/hide add review option -->
-                        <h5><strong><a href="../reviews/new">Add a NEW Review</a></strong></h5>        
-                                <% if(!veggies.length) { %>
-                                    <p>There are no veggies available. :(</p>
-                                <% } %>
-                            <div class="flex-container">
-                                <% veggies.forEach(veggie=> { %>   
-                                    <a href="/veggies/<%= veggie._id %>">
-                                        <img src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %> "><br>
-                                        <%= veggie.name %>
-                                    </a>
-                                <% }) %>
-                            </div>
+                <h4 id="listHeader">List of Veggies</h4>
+                <div id="centeredButton">
+                     <!-- add if about user to show/hide add review option -->
+                    <h5><a id="addReview" class="waves-effect waves-light btn" href="../reviews/new">Add a Review!</a></h5>   
+                </div>
+                    <% if(!veggies.length) { %>
+                        <p>There are no veggies available. :(</p>
+                    <% } %>
+                <div class="allVeg">
+                    <% veggies.forEach(veggie=> { %>   
+                        <a href="/veggies/<%= veggie._id %>">
+                            <img src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %> "><br>
+                            <%= veggie.name %>
+                        </a>
+                    <% }) %>
                 </div>
             </main>
         </div>
