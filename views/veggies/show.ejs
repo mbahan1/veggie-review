@@ -58,7 +58,9 @@
                         <br>
                         <li> <h6 style="font-weight: bold;"><%= review.title %></h6></li>
                         <li> <%= review.body %> </li>                        
-                        <li> <%= review.createdAt.toDateString() %> </li>
+                        <li><small>
+                            <%= new Date(review.createdAt).toLocaleString() %>
+                        </small></li>
                         <% }); %>
                     </ul>
                 </div>

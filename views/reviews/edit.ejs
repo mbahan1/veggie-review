@@ -7,43 +7,34 @@
 		</title>
 	</head>
 	<body>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="../" class="brand-logo">VegReview</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="../veggies">Random Veggie</a></li>
-                <li><a href="../veggies">List of Veggies</a></li>
-              </ul>
-            </div>
-          </nav>
+		<nav>
+			<div class="nav-wrapper">
+			  <a href="../.." class="brand-logo">VegReview</a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="../../reviews/">All Reviews</a></li>
+				<li><a href="../../veggies/">List of Veggies</a></li>
+			  </ul>
+			</div>
+		  </nav>
 		<main>
-					<div class="vegContainer">
-						<h2>
-							<%= review.veggie.name %>
-						</h2>
-						<img src="/public/PNGs/<%= review.veggie.name %>.png" height="200" alt="<%=review.veggie.name %>"><br>
-						<div class="textLeft">
-							<ul>
-								<li><strong>Scientific Name:</strong>
-									<%= review.veggie.scientific_name %>
-								</li>
-								<li><strong>Country of Origin:</strong>
-									<%= review.veggie.origin %>
-								</li>
-								<li><strong>Favorite Recipe:</strong>
-									<%= review.veggie.recipe %>
-								</li>
-							</ul>
-						</div>					
-					</div>
-			<h1>Edit <%= review.title %></h1>
-	
+			<div class="container">
+				<h2>
+					Edit review for <%= review.veggie.name %>
+				</h2>		
+			<h3>Edit Review: <%= review.title %></h3>
+			<div id="editReviewForm">
 			<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-				<input type="text" name="title" value="<%= review.title %>" />
-                <input type="text" name="text" value="<%= review.body %>" />
+				<p>
+					Title<input type="text" name="title" value="<%= review.title %>" />
+				</p>
+				<p>
+					Text<input type="text" name="text" value="<%= review.body %>" />
+				</p>
 				<input type="hidden" name="veggie" value="<%= review.veggie %>" /> <!-- Veggie being reviewed -->
 				<input type="submit" value="Update" />
 			</form>
+			</div> 
+		</div>
 		</main>
 	</body>
 </html>

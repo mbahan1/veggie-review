@@ -17,8 +17,9 @@ router.get("/new", ctrl.newReview);
 router.get("/:id", ctrl.show);
 
 router.post("/", ctrl.create);
+router.get("/:id/edit", ctrl.edit);
 router.put("/:id", ctrl.update);
 router.delete("/:id", ctrl.destroy);
-router.get("/:id/edit", ctrl.edit);
+
 
 module.exports = router;

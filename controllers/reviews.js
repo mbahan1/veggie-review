@@ -47,21 +47,28 @@ const create = (req, res) => {
 
 // Edit
 const edit = (req, res) => {
-	db.Review.findById(req.params.id).populate("veggie").populate("patron").exec((err, foundReview) => {
+	db.Review.findById(req.params.id, (err, foundReview) => {
 		if (err) return res.send(err);
 		const context = { review: foundReview };
 		return res.render("reviews/edit", context);
 	});
 };
+// const edit = (req, res) => {
+// 	db.Review.findById(req.params.id)
+// 	// .populate("veggie")
+// 	// .populate("patron")
+// 	.exec((err, foundReview) => {
+// 		if (err) return res.send(err);
+// 		const context = { review: foundReview };
+// 		return res.render("reviews/edit", context);
+// 	});
+// };
 
 // Update
 const update = (req, res) => {
-	db.Review.findByIdAndUpdate(
-		req.params.id,
+	db.Review.findByIdAndUpdate(req.params.id,
 		{
-			$set: {
-				...req.body,
-			},
+			$set: {...req.body,},
 		},
 		{ new: true },
 		(err, updatedReview) => {
@@ -75,7 +82,6 @@ const update = (req, res) => {
 const destroy = (req, res) => {
 	db.Review.findByIdAndDelete(req.params.id, (err, deletedReview) => {
 		if (err) return res.send(err);
-
 		return res.redirect("/reviews");
 	});
 };
