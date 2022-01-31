@@ -1,0 +1,11 @@
+body {
+    background-color: #FBF5F3;
+}
+.nav-wrapper{
+    background-color: #8DAA9D;
+}
+
+#firstList {
+    color: blue;
+    background-color: brown;
+}
