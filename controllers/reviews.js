@@ -6,8 +6,15 @@ const idx = (req, res) => {
 		if (err) return res.send(err);
 		const context = { reviews: allReviews };
 		return res.render("reviews/index", context);
-	});
+	}).populate("veggie");
 };
+// const idx = (req, res) => {
+// 	db.Review.find({}, function (err, allReviews) {
+// 		if (err) return res.send(err);
+// 		const context = { reviews: allReviews };
+// 		return res.render("reviews/index", context);
+// 	});
+// };
 
 // New
 const newReview = (req, res) => {
