@@ -52,11 +52,11 @@ body {
     text-align: center;		
     flex-wrap: wrap;
 } */
-#listHeader{
+.listHeader{
     text-align: center;
     margin: 20px;
 }
-#centeredButton{
+.centeredButton{
     text-align: center;
 }
 #addReview{
