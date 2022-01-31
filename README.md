@@ -40,4 +40,4 @@ isolated PNG Designed By Ylivdesign from https://pngtree.com/freepng/smiling-veg
 #FBF5F3- "snow" off-white, background and some text
 #8DAA9D- "morning blue" green, banners and buttons
 #522B47- "dark byzantium" purple, some text
-
+#7B0828- "burgundy" links

@@ -20,10 +20,11 @@
     </nav>
 <main>
 <div class="container">
-    <section>
-        <h2><%= veggie.name %></h2>
-            <img src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %>"><br>  
-                <h3>Veggie Info</h3>
+    <h2 style="text-align: center;"><%= veggie.name %></h2>
+        <div class="vegCard">
+            <img class="vegId" src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %>"><br> 
+            <div class="vegInfo">
+                <h4>Veggie Info</h4>
                     <div class="textLeft">
                         <ul>
                             <li><strong>Name:</strong> <%= veggie.name %></li>
@@ -31,7 +32,7 @@
                             <li><strong>Country of Origin:</strong> <%= veggie.origin %></li>
                             <li><strong>Favorite Recipe:</strong>
                                 <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
-                                    <a href="<%=veggie.recipe_URL%>">
+                                    <a class="recipeLink" href="<%=veggie.recipe_URL%>">
                                         <% } %>
                                         <%= veggie.recipe %></li>
                                         <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
@@ -39,28 +40,30 @@
                                 <% } %>
                         </ul>
                     </div>
+                </div> 
                     <br>
-            <div class="inlineList">
-                <a href="../reviews/new">Add Review</a> 
-                <!-- <a href="/veggies/<%=veggie._id %>/edit">Edit Review</a> -->
-            </div>   
-    </section>
+        </div>
     <br>
+    <div class="centeredButton">
+        <!-- add if about user to show/hide add review option -->
+       <h5><a id="addReview" class="waves-effect waves-light btn" href="../reviews/new">Add a Review!</a></h5>   
+   </div>
         <section>
             <!-- this h1 is just for testing purposes -->
-            <h3>There should be <%= veggie.reviews.length %> reviews here</h3>
             <% if (veggie.reviews.length) { %>
+                <h4 style="text-align: center;"><%= veggie.reviews.length %> reviews already, add yours now!</h4>
                 <div>
                     <ul>
                         <% veggie.reviews.forEach(review => { %>
-                        <li> <%= review.title %> </li>
-                        <li> <%= review.createdAt %> </li>
-                        <li> <%= review.body %> </li>
+                        <br>
+                        <li> <h6 style="font-weight: bold;"><%= review.title %></h6></li>
+                        <li> <%= review.body %> </li>                        
+                        <li> <%= review.createdAt.toDateString() %> </li>
                         <% }); %>
                     </ul>
                 </div>
                 <% } else { %>
-                <h5>No Reviews Yet</h5>
+                <h4 style="text-align: center;">No reviews yet, <br> start the conversation!</h4>
                 <% } %>
             </section>
         </div>

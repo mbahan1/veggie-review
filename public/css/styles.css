@@ -83,3 +83,23 @@ body {
     width: auto;
     height: auto;
 }
+.vegCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vegId{
+    max-width: 50%;
+    height: auto;
+    /* border: 5px solid #555; */
+    /* padding: 25%; */
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+}
+.vegInfo{
+    max-width: 50%;
+}
+.recipeLink{
+    color: #7B0828;
+    text-decoration: underline;
+}
