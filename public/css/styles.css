@@ -1,11 +1,41 @@
+#welcomePage{
+    background-color: #8DAA9D;
+}
+#welcome{
+    background-color: #8DAA9D;
+    text-align: center;
+    padding-top: 20px;
+}
+#welcomeNav{
+    margin-top: 20px;
+    background-color:#8DAA9D;
+    /* display: flex;
+    justify-content: space-between; */
+}
+#welcomeNav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#firstList {
+    color: #FBF5F3;
+}
+.nav-wrapper {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+.brand-logo{
+    color: #FBF5F3 !important;
+}
+#nav-mobile li a {
+    color: #FBF5F3 !important;
+}
 body {
     background-color: #FBF5F3;
+    color: #522B47;
 }
 .nav-wrapper{
     background-color: #8DAA9D;
 }
 
-#firstList {
-    color: blue;
-    background-color: brown;
-}
