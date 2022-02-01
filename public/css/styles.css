@@ -29,6 +29,13 @@
     color: #522B47;
     font-weight: bold;
 }
+#poem{
+    text-align: center;
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    size-adjust: bigger;
+}
 .nav-wrapper {
     padding-left: 10% !important;
     padding-right: 10% !important;
