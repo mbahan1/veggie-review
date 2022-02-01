@@ -37,6 +37,8 @@ isolated PNG Designed By Ylivdesign from https://pngtree.com/freepng/smiling-veg
 
 
 # Color scheme
+https://coolors.co/fbf5f3-8daa9d-522b47-7b0828-0f0e0e
+
 #FBF5F3- "snow" off-white, background and some text
 #8DAA9D- "morning blue" green, banners and buttons
 #522B47- "dark byzantium" purple, some text

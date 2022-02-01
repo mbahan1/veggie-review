@@ -20,48 +20,51 @@
     </nav>
 <main>
 <div class="container">
+    <div class="flexContainer">
     <h2 style="text-align: center;"><%= veggie.name %></h2>
+    <br>
         <div class="vegCard">
-            <img class="vegId" src="/public/PNGs/<%= veggie.name %>.png" height="200" alt="<%=veggie.name %>"><br> 
+            <div class="vegIdContainer">
+                <div>
+                    <img class="vegId" src="/public/PNGs/<%= veggie.name %>.png" alt="<%=veggie.name %>">
+                </div>
+            </div>
             <div class="vegInfo">
                 <h4>Veggie Info</h4>
-                    <div class="textLeft">
-                        <ul>
-                            <li><strong>Name:</strong> <%= veggie.name %></li>
-                            <li><strong>Scientific Name:</strong>  <%= veggie.scientific_name %></li>
-                            <li><strong>Country of Origin:</strong> <%= veggie.origin %></li>
-                            <li><strong>Favorite Recipe:</strong>
-                                <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
-                                    <a class="recipeLink" href="<%=veggie.recipe_URL%>">
-                                        <% } %>
-                                        <%= veggie.recipe %></li>
-                                        <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
-                                    </a>
-                                <% } %>
-                        </ul>
-                    </div>
-                </div> 
-                    <br>
+                    <ul>
+                        <li><strong>Name:</strong> <%= veggie.name %></li>
+                        <li><strong>Scientific Name:</strong>  <%= veggie.scientific_name %></li>
+                        <li><strong>Country of Origin:</strong> <%= veggie.origin %></li>
+                        <li><strong>Favorite Recipe:</strong>
+                            <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
+                                <a class="recipeLink" href="<%=veggie.recipe_URL%>">
+                                    <% } %>
+                                    <%= veggie.recipe %></li>
+                                    <% if (veggie.recipe_URL && veggie.recipe_URL.length>0) { %>
+                                </a>
+                            <% } %>
+                    </ul>
+            </div> 
         </div>
     <br>
-    <div class="centeredButton">
+    <div class="centeredButton" id="centerMe">
         <!-- add if about user to show/hide add review option -->
        <h5><a id="addReview" class="waves-effect waves-light btn" href="../reviews/new">Add a Review!</a></h5>   
    </div>
-        <section>
+        <section class="reviewSection">
             <!-- this h1 is just for testing purposes -->
             <% if (veggie.reviews.length) { %>
                 <% if (veggie.reviews.length>1) { %>
-                <h4 style="text-align: center;"><%= veggie.reviews.length %> reviews already, add yours now!</h4>
+                    <h5 style="text-align: center;"><%= veggie.reviews.length %> reviews already, add yours now!</h5>
                 <% } %>
                 <% if (veggie.reviews.length === 1) { %>
-                    <h4 style="text-align: center;"><%= veggie.reviews.length %> review already, add yours now!</h4>
+                    <h5 style="text-align: center;"><%= veggie.reviews.length %> review already, add yours now!</h5>
                 <% } %>
                 <div>
                     <ul>
                         <% veggie.reviews.forEach(review => { %>
                         <br>
-                        <li> <h6 style="font-weight: bold;"><%= review.title %></h6></li>
+                        <li> <h6><%= review.title %></h6></li>
                         <li> <%= review.body %> </li>                        
                         <li><small>
                             <%= new Date(review.createdAt).toLocaleString() %>
@@ -70,9 +73,10 @@
                     </ul>
                 </div>
                 <% } else { %>
-                <h4 style="text-align: center;">No reviews yet, <br> start the conversation!</h4>
+                <h5 style="text-align: center;">No reviews yet, <br> start the conversation!</h5>
                 <% } %>
             </section>
+        </div>
         </div>
     </main>
 </body>
