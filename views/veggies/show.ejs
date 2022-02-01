@@ -51,7 +51,12 @@
         <section>
             <!-- this h1 is just for testing purposes -->
             <% if (veggie.reviews.length) { %>
+                <% if (veggie.reviews.length>1) { %>
                 <h4 style="text-align: center;"><%= veggie.reviews.length %> reviews already, add yours now!</h4>
+                <% } %>
+                <% if (veggie.reviews.length === 1) { %>
+                    <h4 style="text-align: center;"><%= veggie.reviews.length %> review already, add yours now!</h4>
+                <% } %>
                 <div>
                     <ul>
                         <% veggie.reviews.forEach(review => { %>
