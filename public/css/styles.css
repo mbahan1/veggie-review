@@ -35,6 +35,7 @@
 }
 .brand-logo{
     color: #FBF5F3 !important;
+    font-family: 'Quintessential', cursive;
 }
 #nav-mobile li a {
     color: #FBF5F3 !important;
@@ -42,6 +43,7 @@
 body {
     background-color: #FBF5F3;
     color: #522B47;
+    font-family: 'Source Serif 4', sans-serif;
 }
 .nav-wrapper{
     background-color: #8DAA9D;
