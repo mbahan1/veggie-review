@@ -8,13 +8,14 @@ const idx = (req, res) => {
 		return res.render("reviews/index", context);
 	}).populate("veggie");
 };
-// const idx = (req, res) => {
-// 	db.Review.find({}, function (err, allReviews) {
-// 		if (err) return res.send(err);
-// 		const context = { reviews: allReviews };
-// 		return res.render("reviews/index", context);
-// 	});
-// };
+//Adding admin until authorization is implemented
+const admn = (req, res) => {
+	db.Review.find({}, function (err, allReviews) {
+		if (err) return res.send(err);
+		const context = { reviews: allReviews };
+		return res.render("reviews/admin", context);
+	}).populate("veggie");
+};
 
 // New
 const newReview = (req, res) => {
@@ -95,6 +96,7 @@ const destroy = (req, res) => {
 
 module.exports = {
 	idx,
+	admn, //added until authorization is implemented
 	show,
 	create,
 	newReview,

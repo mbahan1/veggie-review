@@ -44,7 +44,14 @@
                     <%= review.body%>
                   </div>
                 </div>
-
+                <div>
+                  <section>
+                    <div>
+                      <a class="link" href="/reviews/<%= review._id %>/edit">Edit</a>
+                      <a class="link" href="/reviews/<%= review._id %>/?_method=DELETE">Remove</a>
+                    </div>
+                  </section>
+                </div>
               </review>
             </div>
   <% }) %>
@@ -53,14 +60,3 @@
     </main>
   </body>
 </html>
-
-
-<!-- removed from line 47, ended above close review tag
-<div>
-  <section>
-    <div>
-      <a class="link" href="/reviews/<ejs party hat with = sign > review._id %>/edit">Edit</a>
-      <a class="link" href="/reviews/<ejs party hat with = sign > review._id %>/?_method=DELETE">Remove</a>
-    </div>
-  </section>
-</div> -->

@@ -4,6 +4,7 @@ const ctrl = require("../controllers/reviews");
 // Rest Routes as a guide. Use "Authors" routes as a guide here if you're stuck!
 /*
  * Index - GET - /reviews - Presentational - respond with all reviews
+ * Admin - GET - /reviews/admin - Presentational - respond with all reviews CRUDable
  * New - GET - /reviews/new  - Presentational Form - a page with a form to create a new review
  * Show - GET - /reviews/:id  - Presentational - respond with specific review by id 
  * Create - Post - /reviews - Functional - recieve data from new route to create an review
@@ -13,9 +14,11 @@ const ctrl = require("../controllers/reviews");
  */
 
 router.get("/", ctrl.idx);
+//adding this one to try and get admin page for CRUD before authorization is implemented
+router.get("/admin", ctrl.admn);
+//
 router.get("/new", ctrl.newReview);
 router.get("/:id", ctrl.show);
-
 router.post("/", ctrl.create);
 router.get("/:id/edit", ctrl.edit);
 router.put("/:id", ctrl.update);
