@@ -11,10 +11,10 @@ const reviewSchema = new mongoose.Schema(
 			required: [true, "You must provide text for your review"],
 		},
         rating: { 
-			type: Number, 
+			type: String,
 		},
         //referenced relationship
-        veggie: {type: mongoose.Schema.Types.ObjectId, ref:"Veggie"},
+        veggie: {type: mongoose.Schema.Types.ObjectId, ref:"Veggie", required: [true, "You must choose a veggie for your review"]},
 		patron: {type: mongoose.Schema.Types.ObjectId, ref:"Patron"},
 	},
 	{
